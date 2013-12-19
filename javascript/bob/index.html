@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src = "jquery-2.0.3.js"></script>
+      <script src = "bob.js"></script>
+  </head>
+  <body>
+    <h1> Fireside Chat with Bobby</h1>
+    <input type="text" name="chat" id="bob-input"></input>
+    <button id="bob-button-input">Talk dirty to me</button>
+    <div id="bob-responses">
+    Don't speak I know just what you're saying!!!!!!!!!!!
+    </div>
+    <script>
+     var bobInputButton =  $("#bob-button-input");
+     console.log(bobInputButton);
+
+     bobInputButton.click(function(eventObject){
+      console.log("Button is clicked");
+      console.log(eventObject);
+
+      eventObject.preventDefault();
+
+      var inputField = $("#bob-input");
+      console.log(inputField);
+
+      var whatIAmSayingToBob = inputField.val();
+      console.log(whatIAmSayingToBob);
+      console.log(Bob);
+
+      var teenager = new Bob();
+      var result = teenager.hey(whatIAmSayingToBob);
+
+      console.log(result);
+
+      var outputField = $("#bob-responses");
+      console.log(outputField);
+      var htmlResult = "<div>" + result + "</div>";
+      outputField.html(htmlResult);
+    });
+     </script>   
+  </body>
+</html>
