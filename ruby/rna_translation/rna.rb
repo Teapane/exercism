@@ -1,0 +1,2 @@
+class RNA
+end
