@@ -23,7 +23,7 @@ function Hamming() {
   this.compute = function (strand1, strand2) {
     var splitStrand1 = strand1.split('');
     var splitStrand2 = strand2.split('');
-    var shortest = shortestiStrand(splitStrand1, splitStrand2)
+    var shortest = shortestStrand(splitStrand1, splitStrand2)
     var result = strandCounting(shortest, splitStrand1, splitStrand2);
       return result;
   };
