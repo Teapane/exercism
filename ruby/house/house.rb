@@ -1,22 +1,24 @@
 class House
   
   def verses(first, last)
-    first.upto(last).map do |number|
-      verse(number)
+    first.upto(last).collect do |digit|
+      verse(digit)
     end.join("\n") + "\n"
   end
 
   def verse(number)
-    "This is" + "%s.\n" % chain(number).join('')
+    "This is" + "%s.\n" % sequence(number).join('')
   end
 
-  def chain(length)
-    components[0..length-1].reverse.map do |subject, link|
-      " the %s that %s" % [subject, link]
+  def sequence(length)
+    fragments[0..length-1].reverse_each.map do |contingent, association|
+      " the #{contingent} that #{association}" 
     end
   end
 
-  def components
+  private
+
+  def fragments
     [
       ['house', 'Jack built'],
       ['malt', 'lay in'],
