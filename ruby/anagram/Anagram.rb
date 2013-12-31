@@ -1,4 +1,4 @@
-  class Anagram
+class Anagram
   attr_reader :letters, :subject
 
   def initialize(word)
@@ -8,19 +8,17 @@
 
   def match(words)
     words.select do |word| 
-     words_match?(letters, letters_from(word)) unless subject.downcase == word.downcase  
-   end
+      words_match?(letters, letters_from(word)) unless subject.downcase == word.downcase  
+    end
   end
 
-
-  private
-
+private
 
   def letters_from(word)
-    word.downcase.split("").sort
+    word.downcase.chars.sort
   end
 
   def words_match?(word1, word2)
     word1 == word2
   end
-  end
+end

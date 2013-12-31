@@ -1,17 +1,17 @@
 class House
   
   def verses(first, last)
-    first.upto(last).collect do |digit|
-      verse(digit)
+    first.upto(last).collect do |i|
+      verse(i)
     end.join("\n") + "\n"
   end
 
   def verse(number)
-    "This is" + "%s.\n" % sequence(number).join('')
+    "This is" "%s.\n" % sequence(number).join('')
   end
 
   def sequence(length)
-    fragments[0..length-1].reverse_each.map do |contingent, association|
+    fragments.take(length).reverse.map do |contingent, association|
       " the #{contingent} that #{association}" 
     end
   end
