@@ -1,7 +1,7 @@
 class Scrabble
 
   def self.score(word)
-   new(word).score
+    new(word).score
   end
 
   attr_reader :word

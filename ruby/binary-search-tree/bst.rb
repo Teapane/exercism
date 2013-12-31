@@ -1,7 +1,6 @@
 class Bst
 
   attr_reader :data, :left, :right
-
   def initialize(data)
     @data = data
   end
@@ -20,22 +19,21 @@ class Bst
     right && right.each(&block)
   end
 
-
   private
-
-  def insert_right(value)
-    if right
-      right.insert(value)
-    else
-      @right = Bst.new(value)
-    end
-  end
 
   def insert_left(value)
     if left
       left.insert(value)
     else
       @left = Bst.new(value)
+    end
+  end
+
+  def insert_right(value)
+    if right
+      right.insert(value)
+    else
+      @right = Bst.new(value)
     end
   end
 end

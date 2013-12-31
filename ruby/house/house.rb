@@ -7,7 +7,7 @@ class House
   end
 
   def verse(number)
-    "This is" "%s.\n" % sequence(number).join('')
+    "This is%s.\n" % sequence(number).join('')
   end
 
   def sequence(length)

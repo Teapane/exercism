@@ -1,6 +1,4 @@
-class TriangleError < ArgumentError; end
-
-
+class TriangleError < StandardError; end
 
 class Triangle
   attr_reader :a, :b, :c
@@ -12,13 +10,13 @@ class Triangle
   end
 
   def kind
+    raise TriangleError if impossible?
     if equilateral?
       :equilateral
     elsif isosceles?
       :isosceles
     else
       :scalene
-
     end
   end
 
@@ -42,6 +40,10 @@ class Triangle
 
   def violates_inequality
     a + b <= c || a + c  <= b || c + b <= a
+  end
+
+  def impossible?
+    impossible_side_length || violates_inequality
   end
   
 end

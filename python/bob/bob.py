@@ -1,10 +1,12 @@
 class Bob:
-  def hey(self, message):
-    if not message or not message.strip():
+  def hey(self, phrase):
+    if phrase:
+      phrase = phrase.strip()
+    if not phrase:
       return 'Fine. Be that way!'
-    message = message.decode('latin-1')
-    if message.isupper():
+    elif phrase.upper() == phrase:
       return 'Woah, chill out!'
-    if message.endswith('?'):
+    elif phrase[-1] == '?':
       return 'Sure.'
-    return 'Whatever.'
+    else:
+      return 'Whatever.'
