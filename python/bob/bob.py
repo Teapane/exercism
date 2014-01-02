@@ -1,12 +1,16 @@
+import re
+
+QUESTION = re.compile(".*\?$");
+YELLING  = re.compile("[^a-z]+$");
+IGNORING = re.compile("\s*$");
 class Bob:
-  def hey(self, phrase):
-    if phrase:
-      phrase = phrase.strip()
-    if not phrase:
-      return 'Fine. Be that way!'
-    elif phrase.upper() == phrase:
-      return 'Woah, chill out!'
-    elif phrase[-1] == '?':
-      return 'Sure.'
-    else:
-      return 'Whatever.'
+   def hey(self, message):
+      if message == None or IGNORING.match( message ): 
+         return 'Fine. Be that way!'
+
+      if YELLING.match( message ):
+         return 'Woah, chill out!'
+      elif QUESTION.match( message ):
+         return 'Sure.'
+      else:
+         return 'Whatever.'
