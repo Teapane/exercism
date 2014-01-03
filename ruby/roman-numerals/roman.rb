@@ -1,15 +1,34 @@
-require ''
+class Fixnum
 
-class Roman
 
-  def to_roman
-   Array.new(3999) do |index|
-      target = index + 1
-        ROMAN_MAP.keys.sort { |a, b| b <=> a }.inject("") do |roman, div|
-            times, target = target.divmod(div)
-            roman << ROMAN_MAP[div] * times
-    end
+  def initialize(arabic)
+    @arabic = arabic
   end
+
+  def to_s
+    result = ''
+    number = Integer(@arabic)
+        NUMERALS.each do |value, symbol|
+            while number >= value
+                result += symbol
+                number -= value
+      end
+    end
+
+    return result
+  end
+
+    def to_i
+        @arabic
+    end
+#end
+
+
+  # def to_roman 
+  #   roman_permutation.each_with_object({}) do  |(digit, roman), hash|
+  #     digit.collect {|roman| hash[digit] = key}
+  #   end
+  # end
 
   def roman_permutation
     {
@@ -27,7 +46,5 @@ class Roman
       4    => 'IV',
       1    => 'I'
     }
-
   end
-
 end
