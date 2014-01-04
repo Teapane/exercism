@@ -1,6 +1,6 @@
 class Bst
-
   attr_reader :data, :left, :right
+  
   def initialize(data)
     @data = data
   end

@@ -1,36 +1,17 @@
 class Fixnum
 
-
-  def initialize(arabic)
-    @arabic = arabic
+  def to_roman
+    result = ""
+    number = self
+    roman_mapping.keys.each do |i|
+      target, arabic = number.divmod(i)
+      result << roman_mapping[i] * target
+      number = arabic
+    end
+    result
   end
 
-  def to_s
-    result = ''
-    number = Integer(@arabic)
-        NUMERALS.each do |value, symbol|
-            while number >= value
-                result += symbol
-                number -= value
-      end
-    end
-
-    return result
-  end
-
-    def to_i
-        @arabic
-    end
-#end
-
-
-  # def to_roman 
-  #   roman_permutation.each_with_object({}) do  |(digit, roman), hash|
-  #     digit.collect {|roman| hash[digit] = key}
-  #   end
-  # end
-
-  def roman_permutation
+  def roman_mapping
     {
       1000 => 'M',
       900  => 'CM',
