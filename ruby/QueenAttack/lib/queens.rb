@@ -56,25 +56,3 @@ attr_reader :white_position, :black_position
   end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
