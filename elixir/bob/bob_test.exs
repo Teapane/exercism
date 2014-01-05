@@ -6,23 +6,23 @@ defmodule TeenagerTest do
   doctest Teenager
 
   test "stating something" do
-    assert Teenager.hey("Tom-ay-to, tom-aaaah-to.") == "Whatever."
+   assert Teenager.hey("Tom-ay-to, tom-aaaah-to.") == "Whatever."
   end
 
   test "shouting" do
-    # assert Teenager.hey("WATCH OUT!") == "Woah, chill out!"
+     assert Teenager.hey("WATCH OUT!") == "Woah, chill out!"
   end
 
   test "asking a question" do
-    # assert Teenager.hey("Does this cryogenic chamber make me look fat?") == "Sure."
+     assert Teenager.hey("Does this cryogenic chamber make me look fat?") == "Sure."
   end
 
   test "talking forcefully" do
-    # assert Teenager.hey("Let's go make out behind the gym!") == "Whatever."
+     assert Teenager.hey("Let's go make out behind the gym!") == "Whatever."
   end
 
   test "shouting numbers" do
-    # assert Teenager.hey("1, 2, 3 GO!") == "Woah, chill out!"
+     assert Teenager.hey("1, 2, 3 GO!") == "Woah, chill out!"
   end
 
   test "shouting with special characters" do
