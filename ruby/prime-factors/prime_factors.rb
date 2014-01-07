@@ -1,17 +1,15 @@
 class PrimeFactors
 
-  def self.for(i)
-    factor = 2
-    value = []
-    until i < factor
-      div, mod = i.divmod(factor)
-      if mod == 0
-       value << factor
-       number = div 
-    else
-      factor += 1 
+  def self.for(number)
+    factors = []
+    divisor = 2
+    while number > 1
+      while number % divisor == 0
+        factors << divisor
+        number /= divisor
+      end
+      divisor += 1
     end
-  end
-    value
+    factors
   end
 end
