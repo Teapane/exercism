@@ -1,4 +1,4 @@
-class SecretHandshake
+class SecretHandshake 
   attr_reader :negative, :data
 
   def initialize(input_marker)
