@@ -11,7 +11,7 @@ class SecretHandshake
     end
   end
 
-  def known_actions
+  def actions
     {
       "1"    => "wink",
       "10"   => "double blink",
@@ -25,7 +25,7 @@ class SecretHandshake
     data.chars.each_with_index do |digit, index|
       if digit == "1"
         key = digit + ("0" * index)
-        results << known_actions[key]
+        results << actions[key]
       end
     end
     results
