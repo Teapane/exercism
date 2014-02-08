@@ -15,6 +15,7 @@ class Array
   end
 end
 
-def self.greatest_from(input)
-  input.max_by{ |data| data.reduce(:+) }
-end
+## Alternative one-liner##
+# def self.greatest_from(input)
+#   input.max_by{ |data| data.reduce(:+) }
+# end
