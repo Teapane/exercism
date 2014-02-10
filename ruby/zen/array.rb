@@ -13,7 +13,7 @@ class Array
   def self.sum(input)
     input.reduce(:+)
   end
-end
+end 
 
 ## Alternative one-liner##
 # def self.greatest_from(input)
