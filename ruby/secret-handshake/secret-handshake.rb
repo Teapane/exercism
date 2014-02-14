@@ -1,9 +1,9 @@
 class SecretHandshake  
   attr_reader :negative, :data
 
-  def initialize(input_marker)
-    if input_marker.kind_of?(Fixnum)
-      binary = input_marker.to_s(2).reverse
+  def initialize(mark)
+    if mark.kind_of?(Fixnum)
+      binary = mark.to_s(2).reverse
       @data = binary[0..3]
       @negative = (binary[4] == "1")
     else
