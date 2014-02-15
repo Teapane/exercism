@@ -1,8 +1,9 @@
+
 class Bob
-  def hey(saying)
-    if empty?(saying)
+  def 
+    if nonsense?(saying)
       'Fine. Be that way.'
-    elsif upcase?(saying)
+    elsif yelling?(saying)
       "Woah, chill out!"
     elsif question?(saying)
       'Sure.'
@@ -10,18 +11,27 @@ class Bob
       "Whatever."
     end
   end
+end
 
-  private
 
-  def empty?(saying)
+class Drivle
+  def nonsense(saying)
     saying == ""
   end
-
-  def upcase?(saying)
+end
+class Intense
+  def yelling?(saying)
     saying == saying.upcase
   end
-
+end
+class inquire
   def question?(saying)
     saying.end_with?("?")
   end
 end
+
+
+
+
+
+
