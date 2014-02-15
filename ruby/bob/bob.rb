@@ -1,4 +1,3 @@
-
 class Bob
   def 
     if nonsense?(saying)
@@ -12,24 +11,6 @@ class Bob
     end
   end
 end
-
-
-class Drivle
-  def nonsense(saying)
-    saying == ""
-  end
-end
-class Intense
-  def yelling?(saying)
-    saying == saying.upcase
-  end
-end
-class inquire
-  def question?(saying)
-    saying.end_with?("?")
-  end
-end
-
 
 
 
