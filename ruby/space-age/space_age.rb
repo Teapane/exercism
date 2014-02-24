@@ -27,4 +27,4 @@ class SpaceAge
       (seconds/(earth_years*conversion)).round(2)
     end
   end
-end
+end  
