@@ -20,5 +20,5 @@ class SumOfMultiples
 
   def multiples_of_digits?(number)
     digit.any? { |digit| number % digit == 0 }
-  end
+  end 
 end
