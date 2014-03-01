@@ -1,19 +1,19 @@
 class Garden
   attr_reader :pots, :students
-  
-  def initialize(diagram, students = default_children)
-    @pots = parse(diagram)
+
+  def initialize(diagram, students = roster)
+    @pots = design(diagram)
     @students = students.sort
     assign_pots
   end
 
-  def default_children
+  def roster
     %w(Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry)
   end
 
   private
 
-  def parse(diagram)
+  def design(diagram)
     diagram.split("\n").map do |row|
       row.split("").map do |sign|
         plants[sign]
