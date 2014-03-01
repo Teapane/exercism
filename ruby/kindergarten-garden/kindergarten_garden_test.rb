@@ -9,7 +9,7 @@ class GardenTest < MiniTest::Unit::TestCase
   end
 
   def test_different_garden_for_alice
-    skip
+    
     garden = Garden.new("VC\nRC")
     assert_equal [:violets, :clover, :radishes, :clover], garden.alice
   end
