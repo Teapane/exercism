@@ -4,7 +4,7 @@ class Garden
   def initialize(diagram, students = roster)
     @pots = design(diagram)
     @students = students.sort
-    assign_pots
+    assignment
   end
 
   def roster
@@ -30,7 +30,7 @@ class Garden
     }
   end
 
-  def assign_pots
+  def assignment
     students.each_with_index do |student, i|
       instance_eval "def #{student.downcase}; position = #{i}*2; pots[0][position,2] + pots[1][position,2]; end"
     end
