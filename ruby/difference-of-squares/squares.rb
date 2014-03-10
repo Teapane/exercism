@@ -11,7 +11,7 @@ class Squares
   end
 
   def sum_of_squares
-    (0..max).inject { |sum, number| sum + number**2 }  
+    (0..max).inject { |sum, number| sum + number ** 2 }  
   end
 
   def difference
