@@ -1,4 +1,4 @@
-class Array
+class Array 
   def accumulate
     data = []
     each do |input|
