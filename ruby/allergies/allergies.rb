@@ -5,6 +5,7 @@ class Allergies
   def initialize(allergens)
   end
 
-  def allergic_to?
+  def allergic_to?(allergens)
+    ALLERGENS
   end
 end

@@ -1,11 +1,7 @@
-class Array 
-     
-  def accumulate
-    data = []
-    each do |input|
-      data << yield(input)
-    end
-    data
-  end
-end
+class Array
 
+  def accumulate
+    self.map { |input| yield input }
+  end
+
+end

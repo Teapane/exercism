@@ -1,45 +1,38 @@
-class SecretHandshake  
-  attr_reader :negative, :data
+class SecretHandshake
+  attr_reader :binary
 
-  def initialize(mark)
-    if mark.kind_of?(Fixnum)
-      binary = mark.to_s(2).reverse
-      @data = binary[0..3]
-      @negative = (binary[4] == "1")
-    else
-      @data = ""
-    end
+  def initialize(input)
+    @binary = valid_integer(input)
   end
 
-  def actions
+  def valid_integer(input)
+    input.kind_of?(Integer) ? to_binary(input) : []
+  end
+
+  def to_binary(input)
+    input.to_s(2).chars.reverse
+  end
+
+  def value
     {
-      "1"    => "wink",
-      "10"   => "double blink",
-      "100"  => "close your eyes",
-      "1000" => "jump"
+      0 => "wink",
+      1 => "double blink",
+      2 => "close your eyes",
+      3 => "jump"
     }
-  end 
-
-  def actions_for(data)
-    results = []
-    data.chars.each_with_index do |digit, index|
-      if digit == "1"
-        key = digit + ("0" * index)
-        results << actions[key]
-      end
-    end
-    results
-  end
-
-  def negative?
-    negative
   end
 
   def commands
-    if negative?
-      actions_for(data).reverse
-    else
-      actions_for(data)
-    end
+    inverse? ? translation.reverse : translation
+  end
+
+  def inverse?
+    binary.length == 5
+  end
+
+  def translation
+    binary.length.times.map { |i|
+      value[i] if binary[i] == "1"
+    }.compact
   end
 end

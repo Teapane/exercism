@@ -5,6 +5,6 @@ class Array
   end
 
   def discard
-    self.select {|input| !yield(input)}
+    self.select { |input| !yield(input) }
   end
 end
