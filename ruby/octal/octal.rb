@@ -10,6 +10,6 @@ class Octal
   end
 
   def valid?
-    0 if octal.chars.any? { |number| number > 8.to_s }
+    0 if octal.chars.any? { |number| number > "8" }
   end
 end

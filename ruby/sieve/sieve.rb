@@ -1,27 +1,16 @@
-require 'pry'
-
 class Sieve
   attr_reader :range
 
-  def initialize(max)
-    @range = (2..max)
+  def initialize(maximum)
+    @range = (2..maximum).to_a
   end
 
   def primes
-   @primes ||= find_primes
+   primes = []
+    while range.any?
+     primes << (contender = range.shift)
+     range.reject! { |input| input % contender == 0 }
+    end
+   primes
   end
-
-  def find_primes
-    input = range.to_a
-    primes = []
-    begin
-      ending_number = input.shift
-      primes << ending_number
-      #binding.pry
-      input.reject! { |number| number % input == 0 }
-    end until input.empty?
-      primes
-    
-  end
-
 end

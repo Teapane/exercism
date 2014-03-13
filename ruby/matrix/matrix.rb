@@ -1,18 +1,17 @@
 class Matrix
 
-  attr_reader :rows
+  attr_reader :string
 
   def initialize(string)
-    @rows = convert(string)
+    @string = string
   end
 
   def columns
     rows.transpose
   end
 
-  def convert(string)
-    input = string.split("\n")
-    input.map { |row| row.split.map(&:to_i) }
+  def rows
+    string.lines.map { |line| line.split.map(&:to_i) }
   end
 
 end
