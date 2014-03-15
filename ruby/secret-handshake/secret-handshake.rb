@@ -1,38 +1,51 @@
 class SecretHandshake
-  attr_reader :binary
+  attr_reader :insignia
 
-  def initialize(input)
-    @binary = valid_integer(input)
-  end
-
-  def valid_integer(input)
-    input.kind_of?(Integer) ? to_binary(input) : []
-  end
-
-  def to_binary(input)
-    input.to_s(2).chars.reverse
-  end
-
-  def value
-    {
-      0 => "wink",
-      1 => "double blink",
-      2 => "close your eyes",
-      3 => "jump"
-    }
+  def initialize(indicate)
+    @insignia = indicate
   end
 
   def commands
-    inverse? ? translation.reverse : translation
+    return [] unless insignia.kind_of?(Fixnum)
+    nullifer == "1" ? actions.reverse : actions
   end
 
-  def inverse?
-    binary.length == 5
+  private
+
+  def actions
+    results = []
+    transformation.map.with_index do |digit, i|
+      if digit == "1"
+        key = digit + ("0" * i)
+        results << mandate[key]
+      end
+    end
+
+    results
   end
 
-  def translation
-    binary.length.times.map { |i|
-      value[i] if binary[i] == "1"
-    }.compact
+  def mandate
+    {
+      "1"    => "wink",
+      "10"   => "double blink",
+      "100"  => "close your eyes",
+      "1000" => "jump"
+    }
+  end
+
+  def to_binary
+    "%b" % insignia
+  end
+
+  def transformation
+   synthesize_transformation[0,4]
+  end
+
+  def synthesize_transformation
+    to_binary.chars.reverse
+  end
+
+  def nullifer
+    synthesize_transformation[4]
   end
 end

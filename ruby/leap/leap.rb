@@ -7,12 +7,12 @@ class Year
   end
 
   def leap?
-    (vanilla_year? && !century?) || exceptional_century?
+    (divisble_by_four? && !century?) || divisible_by_four_hundred?
   end
 
   private
 
-  def vanilla_year?
+  def divisble_by_four?
     (number % 4) == 0
   end
 
@@ -20,7 +20,7 @@ class Year
     (number % 100) == 0
   end
 
-  def exceptional_century?
+  def divisible_by_four_hundred?
     (number % 400) == 0
   end
 
