@@ -6,7 +6,7 @@ I am trying to get better at writing expressive Object-Oriented Code and I feel 
 This is my solution to the TAB parser problem.  The functionality is pretty basic as is the view.  I didn't feel like styling was all that necessary.  I think some logic could be extracted out of the controller-main the CSV parsing logic/ but I felt the simplicity of this app didn't really justify it.  I made multiple models in the Database(Merchant, Purchaser, Item) that all belong to the deal.  This way if the data inputs gets larger (More rows, etc) it would be easier to modify in the future.  Thanks
     Tyler Long
 
-**All tests written in RSpec. To run them...
+*All tests written in RSpec. To run them...
 
 ```
   fork the project/pull down the branch Teapane
@@ -15,7 +15,7 @@ This is my solution to the TAB parser problem.  The functionality is pretty basi
   rspec spec/path_to_file
 ```
 
-**To run the server locally
+*To run the server locally
 
 ```
   Fork the project
