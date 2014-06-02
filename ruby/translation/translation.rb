@@ -8,9 +8,9 @@ class Translation
     lookups[found_key]
   end
 
-  def self.of_rna(strand)
-    strand.chars.each_slice(3).with_object([]) do |codon, output|
-      return output if of_codon(codon.join) == "STOP"     
+  def self.of_rna(sequence)
+    sequence.chars.each_slice(3).with_object([]) do |codon, output|
+      return output if of_codon(codon.join) == "STOP"
       output << of_codon(codon.join)
     end
   end
@@ -19,14 +19,14 @@ class Translation
 
   def self.lookups
     {
-      ["AUG"] => "Methionine",
-      ["UUU", "UUC"] => "Phenylalanine",
-      ["UUA", "UUG" ] => "Leucine",
+      ["AUG"]                      => "Methionine",
+      ["UUU", "UUC"]               => "Phenylalanine",
+      ["UUA", "UUG" ]              => "Leucine",
       ["UCU", "UCC", "UCA", "UCG"] => "Serine",
-      ["UAU", "UAC"] => "Tyrosine", 
-      ["UGU", "UGC"] => "Cystine",
-      ["UGG"] => "Tryptophan",
-      ["UAA", "UAG", "UGA"] => "STOP"
+      ["UAU", "UAC"]               => "Tyrosine",
+      ["UGU", "UGC"]               => "Cystine",
+      ["UGG"]                      => "Tryptophan",
+      ["UAA", "UAG", "UGA"]        => "STOP"
     }
   end
 

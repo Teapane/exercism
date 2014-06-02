@@ -1,6 +1,4 @@
-gem 'minitest'
 require 'minitest/autorun'
-require 'minitest/pride'
 require_relative 'translation'
 
 class TranslationTest < Minitest::Unit::TestCase
@@ -68,7 +66,7 @@ class TranslationTest < Minitest::Unit::TestCase
 
   def test_invalid_codons
     strand = "CARROT"
-    assert_raises(InvalidCodonError) do 
+    assert_raises(InvalidCodonError) do
       Translation.of_rna(strand)
     end
   end
