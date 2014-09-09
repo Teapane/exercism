@@ -1,3 +1,8 @@
+Array::uniq = ->
+  output = {}
+  output[@[key]] = @[key] for key in [0...@length]
+  value for key, value of output
+
 class Triangle
 
   constructor: (side1, side2, side3) ->
