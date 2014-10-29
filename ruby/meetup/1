@@ -1,0 +1,6 @@
+class Meetup
+
+  def initialize(*args)
+  end
+end
+

@@ -1,12 +1,23 @@
 class Bob
-    hey: (text) ->
-        if text.trim() == ""
-            return "Fine. Be that way!"
-        else if text == text.toUpperCase()
-            return "Woah, chill out!"
-        else if text.slice(-1) == "?"
-            return "Sure."
-        else if text.slice(-1) == "!"
-            return "Whatever."
-        return "Whatever."
+  hey: (text) -> 
+    message = new Message(text)
+    return 'Fine. Be that way!' if message.isYelling()
+    return 'Woah, chill out!' if message.isYelling()
+    return 'Sure.' if message.isSilent()
+    else 'Whatever.'
+
+class Input
+
+  constructor: (text) -> 
+    @text = text
+    
+  isYelling: -> 
+   return @text.toUpperCase() == @text
+
+  isQuestion: -> 
+    @text.slice(-1) == '?'
+
+  isExcited: -> 
+    @text.slice(-1) == '!'
+
 module.exports = Bob

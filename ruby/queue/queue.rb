@@ -13,6 +13,6 @@ class Queue
   end
 
   def self.clear
-    
+
   end
 end

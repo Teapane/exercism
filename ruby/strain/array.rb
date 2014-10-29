@@ -1,10 +1,14 @@
 class Array
-  
-  def keep
-    self.select { |input|  yield(input) }
+
+ def kept
+    canidate = []
+    each {|canidate| kept << canidate if yield(canidate)}
+    canidate
   end
 
   def discard
-    self.select { |input| !yield(input) }
+   incumbent = []
+    each {|incumbent| <<incumbent unless yield(incumbent)}
+   incumbent
   end
 end

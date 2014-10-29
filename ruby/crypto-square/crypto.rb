@@ -1,5 +1,6 @@
 class Crypto
   attr_reader :plaintext
+
   def initialize(plaintext)
     @plaintext = plaintext
   end
@@ -13,20 +14,20 @@ class Crypto
   end
 
   def plaintext_segments
-    chunk(normalize_plaintext, size)
+    bits(normalize_plaintext, size)
   end
 
   def ciphertext
-    plaintext_segments.map do |segment|
-      segment.split('').fill('', segment.length...size)
+    plaintext_segments.map do |input|
+      input.split('').fill('', input.length...size)
     end.transpose.flatten.join
   end
 
   def normalize_ciphertext
-    chunk(ciphertext, 5).join(" ")
+    bits(ciphertext, 5).join(" ")
   end
 
-  def chunk(s, size)
+  def bits(s, size)
     s.scan(/.{1,#{size}}/)
   end
 end

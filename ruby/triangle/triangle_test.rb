@@ -49,28 +49,28 @@ class TriangleTest < MiniTest::Unit::TestCase
   end
 
   def test_triangles_with_negative_sides_are_illegal
-   
+
     assert_raises(TriangleError) do
       Triangle.new(3, 4, -5).kind
     end
   end
 
   def test_triangles_violating_triangle_inequality_are_illegal
- 
+
     assert_raises(TriangleError) do
       Triangle.new(1, 1, 3).kind
     end
   end
 
   def test_triangles_violating_triangle_inequality_are_illegal_2
-  
+
     assert_raises(TriangleError) do
       Triangle.new(2, 4, 2).kind
     end
   end
 
   def test_triangles_violating_triangle_inequality_are_illegal_3
-    
+
     assert_raises(TriangleError) do
       Triangle.new(7, 3, 2).kind
     end

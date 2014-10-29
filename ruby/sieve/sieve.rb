@@ -2,7 +2,7 @@ class Sieve
   attr_reader :range
 
   def initialize(maximum)
-    @range = (2..maximum).to_a
+    @range = (2..maximum)
   end
 
   def primes

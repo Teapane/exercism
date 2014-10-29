@@ -20,7 +20,6 @@ class SecretHandshake
         results << mandate[key]
       end
     end
-
     results
   end
 

@@ -1,13 +1,13 @@
 class Garden
   attr_reader :pots, :students
 
-  def initialize(diagram, students = roster)
+  def initialize(diagram, students = schedule)
     @pots = design(diagram)
     @students = students.sort
     assignment
   end
 
-  def roster
+  def schedule
     %w(Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry)
   end
 
