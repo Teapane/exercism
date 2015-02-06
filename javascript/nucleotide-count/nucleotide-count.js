@@ -16,8 +16,6 @@ var DNA = function(dnaString){
              G : DNA.prototype.count('G')
            };
   }();
-
+  
 };
-
-
 module.exports = DNA;
