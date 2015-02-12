@@ -39,7 +39,6 @@ class SpaceAgeTest < MiniTest::Unit::TestCase
   end
 
   def test_age_on_saturn
-
     age = SpaceAge.new(3_000_000_000)
     assert_equal 95.06, age.on_earth
     assert_equal 3.23, age.on_saturn
@@ -52,10 +51,8 @@ class SpaceAgeTest < MiniTest::Unit::TestCase
   end
 
   def test_age_on_neptune
-  
     age = SpaceAge.new(8_210_123_456)
     assert_equal 260.16, age.on_earth
     assert_equal 1.58, age.on_neptune
   end
-
 end
