@@ -1,7 +1,6 @@
 module.exports = function School() {
-
   var db = {};
-
+  
   function add(student, grade) {
     if(db[grade]) {
       db[grade].push(student);
@@ -35,4 +34,4 @@ module.exports = function School() {
 
 function clone(array) {
   return array.slice();
-}
+};
