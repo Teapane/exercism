@@ -21,7 +21,6 @@ ALLERGENS = {
   end
 
   def allergic_to?(allergen)
-    #binding.pry
     ALLERGENS.key(allergen) &  @score == ALLERGENS.key(allergen)
   end
 end
