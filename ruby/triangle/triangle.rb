@@ -45,6 +45,4 @@ class Triangle
   def impossible?
     impossible_side_length || violates_inequality
   end
-  
 end
-
