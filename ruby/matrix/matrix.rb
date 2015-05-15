@@ -1,5 +1,4 @@
 class Matrix
-
   attr_reader :string
 
   def initialize(string)
@@ -13,5 +12,4 @@ class Matrix
   def rows
     string.lines.map { |line| line.split.map(&:to_i) }
   end
-
 end
