@@ -7,21 +7,23 @@ class Flattener
 
     #recursive
     def flatten(arr)
-      arr.reduce([]) do |acc, item|
+      non_nil = arr.reject { |x| x.nil? }
+      non_nil.reduce([]) do |acc, item|
         if array?(item)
           acc + flatten(item)
         else
           acc << item
         end
-      end.compact
+      end
     end
 
 
     #cryptic and recursive
     def cryptic_flatten(arr)
-      arr.reduce([]) do |acc, item|
+      non_nil = arr.reject { |x| x.nil? }
+      non_nil.reduce([]) do |acc, item|
         array?(item) ? acc + cryptic_flatten(item) : acc << item
-      end.compact
+      end
     end
 
     def array?(arr)

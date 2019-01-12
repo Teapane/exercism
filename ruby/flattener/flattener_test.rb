@@ -21,4 +21,12 @@ class FlattenerTest < MiniTest::Unit::TestCase
     new = [1, 2, 3, 4, 5, 6]
     assert_equal new, Flattener.cryptic_flatten(arr)
   end
+
+  def test_all_values_in_nested_list_are_nil
+    arr = [nil, [[[nil]]], nil, nil, [[nil, nil], nil], nil]
+    flat_array = Flattener.flatten(arr)
+    flat_array = Flattener.flatten_with_enumerable(arr)
+    flat_array = Flattener.cryptic_flatten(arr)
+    assert_equal [], flat_array
+  end
 end
