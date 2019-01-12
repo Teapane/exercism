@@ -17,10 +17,10 @@ ALLERGENS = {
   end
 
   def list
-    ALLERGENS.keys.select { |key| key & @score == key }.map { |key| ALLERGENS.fetch(key)}
+    ALLERGENS.keys.select { |key| key & @score == key }.map { |key| ALLERGENS.fetch(key) }
   end
 
   def allergic_to?(allergen)
-    ALLERGENS.key(allergen) &  @score == ALLERGENS.key(allergen)
+    ALLERGENS.key(allergen) & @score == ALLERGENS.key(allergen)
   end
 end

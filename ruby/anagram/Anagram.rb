@@ -7,12 +7,12 @@ class Anagram
   end
 
   def match(words)
-    words.select do |word| 
-      words_match?(letters, letters_from(word)) unless subject.downcase == word.downcase  
+    words.select do |word|
+      words_match?(letters, letters_from(word)) unless subject.downcase == word.downcase
     end
   end
 
-private
+  private
 
   def letters_from(word)
     word.downcase.chars.sort

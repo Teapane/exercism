@@ -17,4 +17,14 @@ class Example
   def self.reversed?(x)
     concatenate(x)
   end
+
+  def one_liner(x)
+    x.chars.reduce([]) { |acc, index| [index] + acc }.join("")
+  end
+
+  def alternate_one_liner(x)
+    x.chars.reduce do |acc, index|
+      [index] + acc
+    end.join("")
+  end
 end
