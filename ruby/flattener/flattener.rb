@@ -1,30 +1,31 @@
 class Flattener
-
-  # built in
-  # ruby is nice
-  def self.flatten_with_enumerable(arr)
-    arr.flatten
-  end
-
-  #recursive
-  def self.flatten(arr, result = [])
-    arr.map do |item|
-      if array?(item)
-        flatten(item, result)
-      else
-        result << item
-      end
+  class << self
+    # built in ruby is nice :D
+    def flatten_with_enumerable(arr)
+      arr.flatten.compact
     end
-    result
-  end
 
-  #cryptic and recursive
-  def self.cryptic_flatten(arr, result = [])
-    arr.map {|item| array?(item) ? flatten(item, result) : result << item }
-    result
-  end
+    #recursive
+    def flatten(arr)
+      arr.reduce([]) do |acc, item|
+        if array?(item)
+          acc + flatten(item)
+        else
+          acc << item
+        end
+      end.compact
+    end
 
-  def self.array?(arr)
-    arr.is_a?(Array)
+
+    #cryptic and recursive
+    def cryptic_flatten(arr)
+      arr.reduce([]) do |acc, item|
+        array?(item) ? acc + cryptic_flatten(item) : acc << item
+      end.compact
+    end
+
+    def array?(arr)
+      arr.is_a?(Array)
+    end
   end
 end
