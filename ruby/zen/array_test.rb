@@ -5,7 +5,7 @@ require_relative 'array'
 
 class ArrayTest < MiniTest::Unit::TestCase
 
-  def test_it_finds_the_correct_subarray_in_a_mixed_group 
+  def test_it_finds_the_correct_subarray_in_a_mixed_group
     input = [
       [1, 2],
       [4, 1],
@@ -13,10 +13,9 @@ class ArrayTest < MiniTest::Unit::TestCase
       [6, 6]
     ]
     assert_equal [6, 6], Array.greatest_from(input)
-    #outside in approach
   end
 
-  
+
   def test_it_finds_the_only_element_in_a_group
     input = [[1]]
     assert_equal [1], Array.greatest_from(input)

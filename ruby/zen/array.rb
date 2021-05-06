@@ -1,21 +1,22 @@
 class Array
-
-  def self.greatest_from(input)
-   largest = input.first
-    input.each do |data|
-      if sum(data) > sum(largest)
-       largest = data 
-     end
+  class << self
+    def greatest_from(input)
+      largest = input.first
+      input.each do |data|
+        if sum(data) > sum(largest)
+          largest = data
+        end
+      end
+      largest
     end
-     return largest
-  end
 
-  def self.sum(input)
-    input.reduce(:+)
+    def sum(input)
+      input.reduce(:+)
+    end
   end
-end 
+end
 
-## Alternative one-liner##
+## Ruby built in##
 # def self.greatest_from(input)
 #   input.max_by{ |data| data.reduce(:+) }
 # end
